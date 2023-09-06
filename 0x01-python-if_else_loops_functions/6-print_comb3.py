@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
-for tens_digit in range(10):
-    for ones_digit in range(tens_digit + 1, 10):
-        print("{:02}, ".format(10 * tens_digit + ones_digit), end="")
+for d1 in range(0, 10):
+    for d2 in range(d1 + 1, 10):
+        if d1 == 8 and d2 == 9:
+            print("{}{}".format(d1, d2))
+        else:
+            print("{}{}".format(d1, d2), end=", ")
