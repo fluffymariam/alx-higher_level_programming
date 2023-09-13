@@ -1,36 +1,40 @@
 #!/usr/bin/python3
+def to_subtract(list_num):
+    to_sub = 0
+    max_list = max(list_num)
+
+    for n in list_num:
+        if max_list > n:
+            to_sub += n
+
+    return (max_list - to_sub)
+
 
 def roman_to_int(roman_string):
-    # Define a dictionary to map Roman numerals to their integer values
-    roman_dict = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-    
-    # Initialize the result
-    result = 0
-    
-    # Initialize a variable to keep track of the previous numeral's value
-    prev_value = 0
-    
-    # Iterate over the Roman numeral string in reverse order
-    for numeral in reversed(roman_string):
-        # Get the integer value of the current numeral
-        current_value = roman_dict[numeral]
-        
-        # If the current numeral's value is less than the previous numeral's value,
-        # subtract it from the result; otherwise, add it to the result
-        if current_value < prev_value:
-            result -= current_value
-        else:
-            result += current_value
-        
-        # Update the previous numeral's value
-        prev_value = current_value
-    
-    return result
+    if not roman_string:
+        return 0
+
+    if not isinstance(roman_string, str):
+        return 0
+
+    rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    list_keys = list(rom_n.keys())
+
+    num = 0
+    last_rom = 0
+    list_num = [0]
+
+    for ch in roman_string:
+        for r_num in list_keys:
+            if r_num == ch:
+                if rom_n.get(ch) <= last_rom:
+                    num += to_subtract(list_num)
+                    list_num = [rom_n.get(ch)]
+                else:
+                    list_num.append(rom_n.get(ch))
+
+                last_rom = rom_n.get(ch)
+
+    num += to_subtract(list_num)
+
+    return (num)
