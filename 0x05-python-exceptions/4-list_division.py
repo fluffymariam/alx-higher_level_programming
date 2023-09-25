@@ -3,7 +3,7 @@
 def list_division(my_list_1, my_list_2, list_length):
     result = []  # Initialize an empty list to store the division results
     
-    for i in range(list_length):
+    for i in range(0, list_length):
         try:
             quotient = my_list_1[i] / my_list_2[i]
         except ZeroDivisionError:
