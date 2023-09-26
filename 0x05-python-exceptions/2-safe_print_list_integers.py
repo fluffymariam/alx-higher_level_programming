@@ -1,7 +1,15 @@
 #!/usr/bin/python3
 
 def safe_print_list_integers(my_list=[], x=0):
-    count = 0  # Initialize a counter for the number of integers printed
+     """Print the first x elements.
+     Args:
+        my_list (list): The list print elements from.
+        x (int): The elements of my_list to print.
+
+    Returns:
+        The numb elements printed.
+    """
+    count = 0
     
     try:
         for i in range(x):
