@@ -1,8 +1,9 @@
-#include <Python.h>
 /*
  * File: 103-python.c
- * Auth: Your Name
+ * Auth: mariam
  */
+
+#include <Python.h>
 
 void print_python_list_info(PyObject *p);
 void print_python_bytes_info(PyObject *p);
