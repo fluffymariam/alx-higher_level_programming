@@ -4,4 +4,3 @@
 class Rectangle:
     """This is a simple rectangle class."""
     pass
-
