@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""
-This module defines the Rectangle class.
-"""
+"""This module defines the Rectangle class."""
+
 
 class Rectangle:
-    """
-    Represents a rectangle with width and height attributes.
+    """Represents a rectangle with width and height attributes.
     """
 
     def __init__(self, width=0, height=0):
-        """
-        Initializes a new Rectangle instance.
+        """Initializes a new Rectangle instance.
 
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
@@ -53,5 +50,6 @@ class Rectangle:
 
     def perimeter(self):
         """Calculates and returns the rectangle perimeter."""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return 2 * (self.__width + self.__height)
-
