@@ -4,7 +4,6 @@ N-Queens Problem Solver
 Usage: nqueens N
 """
 
-
 import sys
 
 
@@ -32,7 +31,7 @@ def solve_nqueens_util(board, col, n):
     Utilizes backtracking to solve the N-Queens puzzle.
     """
     if col >= n:
-        print(board)
+        print(get_solution(board, n))
         return True
 
     res = False
@@ -43,6 +42,18 @@ def solve_nqueens_util(board, col, n):
             board[i][col] = 0
 
     return res
+
+
+def get_solution(board, n):
+    """
+    Returns the solution in the required format.
+    """
+    solution = []
+    for i in range(n):
+        for j in range(n):
+            if board[i][j] == 1:
+                solution.append([i, j])
+    return solution
 
 
 def solve_nqueens(n):
