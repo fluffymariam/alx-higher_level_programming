@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""
+Test cases for the 2-matrix_divided.py program
+"""
+
+from matrix_divided import matrix_divided
+import unittest
+
+class TestMatrixDivided(unittest.TestCase):
+    def test_integer_division(self):
+        matrix = [[1, 2, 3], [4, 5, 6]]
+        self.assertEqual(matrix_divided(matrix, 3), [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]])
+
+    def test_float_division(self):
+        matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]]
+        self.assertEqual(matrix_divided(matrix, 2), [[0.75, 1.25, 1.75], [2.25, 2.75, 3.25]])
+
+    def test_division_by_zero(self):
+        matrix = [[1, 2], [3, 4]]
+        with self.assertRaises(ZeroDivisionError) as context:
+            matrix_divided(matrix, 0)
+        self.assertEqual(str(context.exception), "division by zero")
+
+    def test_invalid_matrix_type(self):
+        matrix = "not_a_matrix"
+        with self.assertRaises(TypeError) as context:
+            matrix_divided(matrix, 2)
+        self.assertEqual(str(context.exception), "matrix must be a matrix (list of lists) of integers/floats")
+
+    def test_invalid_matrix_size(self):
+        matrix = [[1, 2, 3], [4, 5]]
+        with self.assertRaises(TypeError) as context:
+            matrix_divided(matrix, 2)
+        self.assertEqual(str(context.exception), "Each row of the matrix must have the same size")
+
+    def test_invalid_div_type(self):
+        matrix = [[1, 2], [3, 4]]
+        with self.assertRaises(TypeError) as context:
+            matrix_divided(matrix, "not_a_number")
+        self.assertEqual(str(context.exception), "div must be a number")
+
+if __name__ == "__main__":
+    unittest.main()
+
