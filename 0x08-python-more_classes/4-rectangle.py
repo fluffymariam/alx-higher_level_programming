@@ -117,5 +117,5 @@ class Rectangle:
         Returns:
             str: A string representation that can be used with eval() to recreate the object.
         """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
 
