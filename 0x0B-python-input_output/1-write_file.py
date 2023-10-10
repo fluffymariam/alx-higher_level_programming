@@ -6,7 +6,7 @@ Module for writing a string to a text file (UTF8).
 
 def write_file(filename="", text=""):
     """
-    Writes a string to a text file (UTF8) and returns the number of characters written.
+    Writes a string to a text he number of characters written.
 
     Args:
         filename (str): The name of the file to be written.

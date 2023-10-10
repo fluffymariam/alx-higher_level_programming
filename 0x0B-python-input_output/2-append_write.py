@@ -6,7 +6,7 @@ Module for appending a string to the end of a text file (UTF8).
 
 def append_write(filename="", text=""):
     """
-    Appends a string to the end of a text file (UTF8) and returns the number of characters added.
+    Appends a str number of characters added.
 
     Args:
         filename (str): The name of the file to be appended.
