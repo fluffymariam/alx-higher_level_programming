@@ -13,6 +13,7 @@ def print_metrics(total_size, status_codes):
         if count > 0:
             print("{}: {}".format(code, count))
 
+
 def main():
     total_size = 0
     status_codes = {
@@ -39,6 +40,7 @@ def main():
         pass
 
     print_metrics(total_size, status_codes)
+
 
 if __name__ == "__main__":
     main()
