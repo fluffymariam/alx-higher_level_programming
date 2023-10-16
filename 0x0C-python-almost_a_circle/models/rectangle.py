@@ -3,9 +3,10 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represents a rectangle."""
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes a Rectangle instance."""
         super().__init__(id)
@@ -111,6 +112,7 @@ class Rectangle(Base):
             'x': self.__x,
             'y': self.__y
         }
+
 
 if __name__ == "__main__":
     r1 = Rectangle(10, 2, 1, 9)
